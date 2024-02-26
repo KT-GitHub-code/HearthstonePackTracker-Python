@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-# import sys
+import sys
 import json
 
 
@@ -9,8 +9,8 @@ def main_function():
 
     runs_dict = get_pack_histories_from_json_data(json_data)
 
-    # pack_type = sys.argv[1]
-    pack_type = "Classic"
+    # pack_type = "Classic"
+    pack_type = sys.argv[1]
 
     plot_pack_history(pack_type, runs_dict)
 
@@ -34,7 +34,9 @@ def plot_pack_history(pack_type, runs_dict):
     plt.ylabel('Opened packs')
     plt.title(pack_type)
 
-    plt.show()
+    # plt.show()
+    save_path = f"plots/{pack_type}.png"
+    plt.savefig(save_path, format='png', dpi=100, bbox_inches='tight')
 
 
 def get_pack_histories_from_json_data(json_data):
