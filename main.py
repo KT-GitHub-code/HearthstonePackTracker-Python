@@ -35,7 +35,7 @@ def plot_pack_history(pack_type, runs_dict):
     plt.title(pack_type)
 
     # plt.show()
-    save_path = f"plots/{pack_type}.png"
+    save_path = "/home/kt/Projects/HearthstonePackTracker-Python/plots/" + pack_type + ".png"
     plt.savefig(save_path, format='png', dpi=100, bbox_inches='tight')
 
 
